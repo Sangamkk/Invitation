@@ -28,9 +28,11 @@ jobs:
           node-version: lts/*
 
       - name: Install dependencies
+        working-directory: ./wedding-invitation
         run: npm install
 
       - name: Build
+        working-directory: ./wedding-invitation
         run: npm run build
 
       - name: Setup Pages
@@ -39,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: "./dist"
+          path: "./wedding-invitation/dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
